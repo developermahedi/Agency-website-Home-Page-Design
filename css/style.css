@@ -1,0 +1,229 @@
+
+
+/* google font cdn */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+/* color variable */
+:root{
+    --primaryColor:#ff4757;
+    --secondaryColor:#2f3542;
+    --darkColor:#000;
+    --whiteColor:#fff;
+    --rgbaBgColor:rgba(255, 71, 87, 0.6);
+}
+/* font size px to rem convart */
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+/* reset css  */
+a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul,
+li {
+    list-style: none;
+}
+p{
+    font-weight: 400;
+}
+h1,h2,h3{
+    font-weight: 600;
+}
+/* container section */
+.container {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 15rem;
+    cursor: pointer;
+}
+
+.menu {
+    width: 3rem;
+    cursor: pointer;
+}
+/* navbar section  */
+.navbar {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 3rem 5% 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    flex: 1;
+    text-align: right;
+    margin-right: 13rem
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 4rem;
+}
+
+.navbar ul li a {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #000;
+    transition: all .4s ease;
+}
+.navbar ul li a:hover{
+    color: var(--primaryColor);
+}
+
+.navbar ul li a.text_white {
+    color: var(--whiteColor);
+    transition: all .4s ease;
+}
+.navbar ul li a.text_white:hover{
+    color: var(--darkColor);
+}
+/* banner left */
+.banner_left {
+    flex-basis: 62%;
+    padding: 10% 5% 0;
+}
+
+.banner_left h1 {
+    font-size: 4.5rem;
+    color: var(--secondaryColor);
+    padding-left: 6rem;
+    position: relative;
+    transition: all .5s ease;
+}
+.banner_left h1:hover{
+    color: var(--primaryColor);
+}
+.banner_left h1::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: .8rem;
+    height: 80%;
+    transform: translateY(-50%);
+    background: var(--primaryColor);
+    border-radius: .5rem;
+}
+/* banner right */
+.banner_right {
+    flex-basis: 38%;
+    padding: 10% 3% 0;
+    background: var(--rgbaBgColor);
+    position: relative;
+}
+
+.back_video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: -100;
+}
+
+.banner_right h3 {
+    color: var(--whiteColor);
+    font-size: 2rem;
+    padding-left: 5rem;
+    position: absolute;
+    bottom: 12rem;
+}
+
+.banner_right h3::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    width: .6rem;
+    height: 100%;
+    transform: translateY(-50%);
+    background: var(--whiteColor);
+    border-radius: .5rem;
+}
+
+.play_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8rem;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+/* team section */
+.team{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+}
+.user {
+    flex-basis: 27%;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 1s;
+    position: relative;
+}
+.user img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+/* info section */
+.info {
+   background: var(--primaryColor);
+    box-shadow: 0rem 0rem .5rem var(--secondaryColor);
+    text-align: center;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 1s;
+    transform-origin: top center;
+    transform: scaleY(0);
+}
+.user:hover img{
+    transform: translateY(-3rem);
+}
+.user:hover .info{
+    opacity: 1;
+    margin-top: -3rem;
+    transform: scaleY(1);
+}
+.info h2 {
+    font-size: 2.5rem;
+    color: var(--whiteColor);
+    margin-bottom: 0.5rem;
+}
+
+.info p {
+    font-size: 1.7rem;
+    color: var(--whiteColor);
+}
+.user .arrow_btn{
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    width: 5rem;
+    transform: translateX(-50%);
+    transition: opacity 1s;
+}
+.user:hover .arrow_btn{
+    opacity: 0;
+}
